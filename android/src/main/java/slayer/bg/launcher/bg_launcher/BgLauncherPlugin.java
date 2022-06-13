@@ -35,7 +35,7 @@ public class BgLauncherPlugin implements FlutterPlugin, MethodCallHandler {
         bgLauncherIntent.putExtra("extras" , extras);
       }
       if(action != null){
-        bgLauncherIntent.setAction("action");
+        bgLauncherIntent.setAction(action);
       }
       bgLauncherIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
       context.startActivity(bgLauncherIntent);
