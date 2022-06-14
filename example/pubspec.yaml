@@ -19,12 +19,9 @@ dependencies:
     sdk: flutter
 
   bg_launcher:
-    # When depending on this package from a real application you should use:
-    #   bg_launcher: ^x.y.z
-    # See https://dart.dev/tools/pub/dependencies#version-constraints
-    # The example app is bundled with the plugin so we use a path dependency on
-    # the parent directory to use the current plugin's version.
     path: ../
+  receive_intent: ^0.2.0
+  flutter_overlay_window: ^0.2.9
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

@@ -1,6 +1,4 @@
-import 'dart:async';
-
-import 'package:bg_launcher/bg_launcher.dart';
+import 'package:bg_launcher_example/exemple_receive_intent.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,22 +20,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: TextButton(
-            onPressed: () {
-              Timer.periodic(const Duration(seconds: 8), (timer) {
-                BgLauncher.bringAppToForeground();
-              });
-            },
-            child: const Text('Launch'),
-          ),
-        ),
-      ),
-    );
+    return const MaterialApp(home: ExempleReceive());
   }
 }
