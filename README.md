@@ -12,9 +12,15 @@ Apps running on Android 10 or higher can start activities only when one or more 
 ## Getting Started
 
 ```dart
-BgLauncher.bringAppToForeground(
-    action: 'FBI-OPEN-UP',
-    extras: 'Put extras',
-);
+
+  /// `extras` & `action` are useful if you want to determine
+  /// what you will do when you bring the app from background
+  /// you can use `receive_intent` package and filter them with
+  /// the action & extras to show your own UI/ logic ...  
+  
+    BgLauncher.bringAppToForeground(
+      action: 'FBI-OPEN-UP',
+      extras: 'https://youtu.be/dQw4w9WgXcQ',
+    );
 
 ```
