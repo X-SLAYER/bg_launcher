@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:bg_launcher/bg_launcher.dart';
 import 'package:flutter/material.dart' hide Intent;
@@ -24,7 +25,14 @@ class _ExempleReceiveState extends State<ExempleReceive> {
     Timer.periodic(const Duration(seconds: 10), (timer) {
       BgLauncher.bringAppToForeground(
         action: 'FBI-OPEN-UP',
-        extras: 'At: ${DateTime.now()}',
+        extras: {
+          "title": "FBI OPEN UP",
+          "message": "The FBI is open up!",
+          "color": "#FF0000",
+          "priority": "high",
+          "visibility": "public",
+          "notificationId": "1",
+        },
       );
     });
   }
@@ -44,12 +52,13 @@ class _ExempleReceiveState extends State<ExempleReceive> {
                 stream: ReceiveIntent.receivedIntentStream,
                 builder: (context, snapshot) {
                   final intent = snapshot.data;
+                  log('$intent');
                   return Center(
                     child: Column(
                       children: [
                         const Text("BG Launcher: "),
                         Text('action: ${intent?.action}'),
-                        Text("extras: ${intent?.extra?['extras']}"),
+                        Text("extras: ${intent?.extra}"),
                       ],
                     ),
                   );
