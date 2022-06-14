@@ -11,6 +11,8 @@ Apps running on Android 10 or higher can start activities only when one or more 
 
 ## Getting Started
 
+check the example folder for a clearer example
+
 ```dart
 
   /// `extras` & `action` are useful if you want to determine
