@@ -9,11 +9,13 @@ class BgLauncher {
   /// what you will do when you bring the app from background
   /// you can use `receive_intent` package and filter them with
   /// the action & extras to show your own UI/ logic ...
-  static void bringAppToForeground(
-      {Map<String, String>? extras, String? action}) {
+  static void bringAppToForeground({
+    String? action,
+    Map<String, String>? extras,
+  }) {
     _channel.invokeMethod("bringAppToForeground", {
-      'extras': extras,
       'action': action,
+      'extras': extras,
     });
   }
 }
