@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:bg_launcher/bg_launcher.dart';
@@ -22,19 +23,22 @@ class _ExempleReceiveState extends State<ExempleReceive> {
         FlutterOverlayWindow.requestPermission();
       }
     });
-    Timer.periodic(const Duration(seconds: 10), (timer) {
-      BgLauncher.bringAppToForeground(
-        action: 'FBI-OPEN-UP',
-        extras: {
-          "title": "FBI OPEN UP",
-          "message": "The FBI is open up!",
-          "color": "#FF0000",
-          "priority": "high",
-          "visibility": "public",
-          "notificationId": "1",
-        },
-      );
-    });
+    Timer.periodic(
+      const Duration(seconds: 10),
+      (timer) {
+        BgLauncher.bringAppToForeground(
+          action: 'FBI-OPEN-UP',
+          extras: {
+            "title": "FBI OPEN UP",
+            "message": "The FBI is open up!",
+            "color": "#FF0000",
+            "priority": "high",
+            "visibility": "public",
+            "notificationId": "1",
+          },
+        );
+      },
+    );
   }
 
   @override
@@ -58,7 +62,7 @@ class _ExempleReceiveState extends State<ExempleReceive> {
                       children: [
                         const Text("BG Launcher: "),
                         Text('action: ${intent?.action}'),
-                        Text("extras: ${intent?.extra}"),
+                        Text("extras: ${jsonEncode(intent?.extra)}"),
                       ],
                     ),
                   );

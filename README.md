@@ -22,7 +22,14 @@ check the example folder for a clearer example
   
     BgLauncher.bringAppToForeground(
       action: 'FBI-OPEN-UP',
-      extras: 'https://youtu.be/dQw4w9WgXcQ',
+      extras: {
+        "title": "FBI OPEN UP",
+        "message": "The FBI is open up!",
+        "color": "#FF0000",
+        "priority": "high",
+        "visibility": "public",
+        "notificationId": "1",
+      },
     );
 
 ```
