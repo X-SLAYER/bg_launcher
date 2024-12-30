@@ -22,6 +22,9 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+
+    namespace 'slayer.bg.launcher.bg_launcher'
+    
     compileSdkVersion 31
 
     compileOptions {
